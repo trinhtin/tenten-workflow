@@ -61,57 +61,76 @@ Chúc bạn thành công!
 -------------------------------------------------
 
 
-# Quản lý mã nguồn với Git: Sử dụng 2 nhánh release và 1 nhánh chính (main)
+Để thông báo cho Team Lead rằng bạn đã hoàn thành công việc và chờ anh ấy review code, bạn có thể thực hiện theo các bước sau đây:
 
-This document describes a popular workflow for managing source code with Git using two release branches and one main branch.
+### 1. Đẩy code lên repository từ xa
+Đảm bảo rằng tất cả các thay đổi của bạn đã được commit và đẩy lên repository từ xa trên nhánh release mà bạn đang làm việc.
 
-## Branches
+```sh
+git add .
+git commit -m "Complete feature X"
+git push origin release-branch-name
+```
 
-* **main branch:**
-    * The central branch that stores stable and well-tested source code.
-    * Should be protected to avoid direct changes.
-    * Used to create official releases for the project.
-* **release branches:**
-    * Created from the main branch for each new release.
-    * Used to implement changes and bug fixes for the upcoming release.
-    * Once completed, the release branch is merged into the main branch and a tag is created to mark the release.
+### 2. Tạo một Pull Request (PR) / Merge Request (MR)
+Nếu bạn đang sử dụng một nền tảng quản lý mã nguồn như GitHub, GitLab, hoặc Bitbucket, bạn có thể tạo một Pull Request (PR) hoặc Merge Request (MR) để yêu cầu review code. Các bước dưới đây sẽ hướng dẫn tạo PR trên GitHub:
 
-## Workflow
+- **Truy cập repository trên GitHub:**
+  - Mở trình duyệt web và truy cập vào repository của bạn trên GitHub.
+  
+- **Tạo Pull Request:**
+  - Chọn tab "Pull requests".
+  - Nhấp vào nút "New pull request".
+  - Chọn nhánh gốc (main) và nhánh mà bạn đã làm việc (release-branch-name).
+  - Nhấp vào "Create pull request".
+  - Điền tiêu đề và mô tả chi tiết về những gì bạn đã làm trong Pull Request. Điều này giúp Team Lead hiểu rõ những thay đổi mà bạn đã thực hiện.
+  - Gán người review (Team Lead) vào Pull Request.
 
-1. **Start from the main branch:**
-    * Clone the latest source code from the main branch to your local machine.
-    * Begin working on changes and bug fixes for the next release.
-2. **Create a release branch:**
-    * When you're ready for a new release, create a new release branch from the main branch.
-    * Example: `git branch release/v1.0.0`
-3. **Work on the release branch:**
-    * Switch to the created release branch: `git checkout release/v1.0.0`
-    * Make the necessary changes and bug fixes for the release.
-    * Frequently commit and push your changes to the release branch.
-4. **Review and merge the release branch:**
-    * After completing the release development, switch to the release branch and run `git checkout main`.
-    * Merge the latest code from the release branch into the main branch: `git merge release/v1.0.0`.
-    * Resolve any conflicts (if any) that arise during the merge process.
-    * Push the changes to the main branch.
-5. **Create a tag for the release:**
-    * Switch to the main branch: `git checkout main`
-    * Create a tag for the release: `git tag v1.0.0`
-    * Push the tag to the main branch: `git push --tags`
-6. **Release the software:**
-    * After creating the tag, you can proceed with publishing the release to users.
+### 3. Thông báo cho Team Lead
+Sau khi tạo Pull Request, bạn cần thông báo cho Team Lead rằng bạn đã hoàn thành công việc và đang chờ review. Bạn có thể sử dụng một số phương pháp sau:
 
-##  Additional Notes
+#### Qua email
+- Soạn một email với tiêu đề và nội dung rõ ràng.
+  - **Tiêu đề:** [Project Name] Code Review Request for Feature X
+  - **Nội dung:**
+    ```
+    Hi [Team Lead's Name],
 
-* Consider using Git Flow or GitLab Flow for a clearer and more efficient workflow.
-* Utilize code review to ensure code quality before merging into the main branch.
-* Employing release branches helps safeguard the main branch from unwanted changes and guarantees stability for official releases. 
+    I have completed the implementation of feature X and pushed the changes to the branch [release-branch-name]. 
+    A pull request has been created for your review. Please take a look when you have the time.
 
-## References
+    PR Link: [Insert Pull Request Link]
 
-* [Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows)
-* [GitHub workflow](https://docs.github.com/en/get-started/using-github/github-flow)
-* [GitLab Flow](https://about.gitlab.com/topics/version-control/what-is-gitlab-flow/)
+    Thank you,
+    [Your Name]
+    ```
 
-For further information, explore additional resources and online courses on Git to enhance your knowledge and proficiency in source code management.
+#### Qua công cụ chat của công ty (Slack, Microsoft Teams, etc.)
+- Gửi tin nhắn trực tiếp hoặc thông báo trong kênh phù hợp.
+  ```
+  Hi @TeamLead,
 
-I hope this helps!
+  I have completed the implementation of feature X and pushed the changes to the branch [release-branch-name]. 
+  A pull request has been created for your review. Please take a look when you have the time.
+
+  PR Link: [Insert Pull Request Link]
+
+  Thank you!
+  ```
+
+#### Qua hệ thống quản lý công việc (Jira, Trello, etc.)
+- Cập nhật trạng thái của task/ticket liên quan và thêm nhận xét (comment) để thông báo cho Team Lead.
+  ```
+  Feature X is implemented and ready for review. Please see the pull request: [Insert Pull Request Link]
+  ```
+
+### 4. Theo dõi quá trình review
+Sau khi thông báo, theo dõi quá trình review và sẵn sàng trả lời các câu hỏi hoặc thực hiện các thay đổi cần thiết theo phản hồi từ Team Lead.
+
+### Tóm lại
+- Đảm bảo code đã được đẩy lên repository từ xa.
+- Tạo Pull Request/Merge Request.
+- Thông báo cho Team Lead qua email, công cụ chat, hoặc hệ thống quản lý công việc.
+- Theo dõi quá trình review và thực hiện các thay đổi nếu cần thiết.
+
+Những bước này sẽ giúp quá trình giao tiếp và review code diễn ra suôn sẻ và hiệu quả.
