@@ -1,6 +1,8 @@
 # tenten-workflow
-
 ## Quản lý mã nguồn với Git: Sử dụng 2 nhánh release và 1 nhánh chính (main)
+
+Hi baby
+Em không hiểu anh nói gì sao?
 
 Để quản lý mã nguồn hiệu quả cho dự án của bạn với Git, việc sử dụng 2 nhánh release dành cho thành viên và 1 nhánh chính (main) là một phương pháp phổ biến. Cách thức hoạt động như sau:
 
