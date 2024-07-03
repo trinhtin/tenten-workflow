@@ -1,6 +1,6 @@
 # tenten-workflow
 
-## Quản lý mã nguồn với Git: Sử dụng 2 nhánh release và 1 nhánh chính (main)
+## I. Quản lý mã nguồn với Git: Sử dụng 2 nhánh release và 1 nhánh chính (main)
 
 Để quản lý mã nguồn hiệu quả cho dự án của bạn với Git, việc sử dụng 2 nhánh release dành cho thành viên và 1 nhánh chính (main) là một phương pháp phổ biến. Cách thức hoạt động như sau:
 
@@ -52,14 +52,8 @@
 * [GitHub workflow](https://docs.github.com/en/get-started/using-github/github-flow)
 * [GitLab Flow](https://about.gitlab.com/topics/version-control/what-is-gitlab-flow/)
 
-
-Ngoài ra, bạn có thể tham khảo thêm các tài liệu và khóa học online về Git để nâng cao kiến thức và kỹ năng quản lý mã nguồn hiệu quả.
-
-Chúc bạn thành công!
-
-
 -------------------------------------------------
-
+## II. Thông báo cho Team Lead rằng bạn đã hoàn thành công việc và chờ anh ấy review code
 
 Để thông báo cho Team Lead rằng bạn đã hoàn thành công việc và chờ anh ấy review code, bạn có thể thực hiện theo các bước sau đây:
 
@@ -136,6 +130,7 @@ Sau khi thông báo, theo dõi quá trình review và sẵn sàng trả lời c�
 Những bước này sẽ giúp quá trình giao tiếp và review code diễn ra suôn sẻ và hiệu quả.
 
 ------------------------------------
+## III. Nếu bạn đã chỉnh sửa nhánh `main` và cần sửa chữa một nhánh khác (`feature-branch`) để phù hợp
 Nếu bạn đã chỉnh sửa nhánh `main` và cần sửa chữa một nhánh khác (`feature-branch`) để phù hợp với những thay đổi mới trên `main`, bạn có thể thực hiện các bước sau đây:
 
 ### 1. Cập nhật nhánh `main` từ repository từ xa
