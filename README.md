@@ -206,3 +206,77 @@ git push origin feature-branch
     ```
 
 Bằng cách này, nhánh `feature-branch` của bạn sẽ được cập nhật với các thay đổi mới nhất từ nhánh `main`.
+
+----------------------------------------
+## III. Để tạo một Pull Request (PR) khi không có sự thay đổi nào
+
+Để tạo một Pull Request (PR) khi không có sự thay đổi nào (chỉ để thông báo rằng nhánh của bạn đã được đồng bộ với nhánh `main` hoặc để kích hoạt quy trình CI/CD), bạn có thể thực hiện theo các bước sau:
+
+### 1. Đảm bảo nhánh của bạn đã được cập nhật với nhánh `main`
+
+Chuyển sang nhánh của bạn (ví dụ: `feature-branch`) và hợp nhất (merge) nhánh `main` vào nhánh này để đảm bảo rằng chúng đã được đồng bộ.
+
+```sh
+git checkout feature-branch
+git merge main
+```
+
+Nếu không có thay đổi nào, quá trình merge sẽ diễn ra mà không cần tạo commit mới.
+
+### 2. Tạo một commit trống
+
+Nếu bạn vẫn muốn tạo một Pull Request nhưng không có sự thay đổi nào để commit, bạn có thể tạo một commit trống. Commit trống là commit không chứa thay đổi nào nhưng vẫn được ghi nhận trong lịch sử commit.
+
+```sh
+git commit --allow-empty -m "Trigger PR for review/CI"
+```
+
+### 3. Đẩy nhánh của bạn lên repository từ xa
+
+Đẩy nhánh `feature-branch` của bạn lên repository từ xa.
+
+```sh
+git push origin feature-branch
+```
+
+### 4. Tạo Pull Request
+
+Truy cập repository trên nền tảng quản lý mã nguồn (GitHub, GitLab, Bitbucket, v.v.) và tạo một Pull Request từ nhánh `feature-branch` sang nhánh `main`. Các bước cụ thể để tạo Pull Request trên GitHub như sau:
+
+1. **Truy cập repository trên GitHub:**
+   - Mở trình duyệt web và truy cập vào repository của bạn trên GitHub.
+
+2. **Tạo Pull Request:**
+   - Chọn tab "Pull requests".
+   - Nhấp vào nút "New pull request".
+   - Chọn nhánh gốc (main) và nhánh mà bạn đã làm việc (feature-branch).
+   - Nhấp vào "Create pull request".
+   - Điền tiêu đề và mô tả chi tiết về mục đích của Pull Request. Điều này giúp người review hoặc hệ thống CI/CD hiểu rõ lý do tạo PR mặc dù không có thay đổi mã nguồn.
+
+### Tóm tắt các bước:
+
+1. **Cập nhật nhánh của bạn với nhánh `main`:**
+    ```sh
+    git checkout feature-branch
+    git merge main
+    ```
+
+2. **Tạo một commit trống:**
+    ```sh
+    git commit --allow-empty -m "Trigger PR for review/CI"
+    ```
+
+3. **Đẩy nhánh của bạn lên repository từ xa:**
+    ```sh
+    git push origin feature-branch
+    ```
+
+4. **Tạo Pull Request:**
+    - Truy cập repository trên GitHub.
+    - Chọn tab "Pull requests".
+    - Nhấp vào "New pull request".
+    - Chọn nhánh gốc (main) và nhánh mà bạn đã làm việc (feature-branch).
+    - Nhấp vào "Create pull request".
+    - Điền tiêu đề và mô tả chi tiết.
+
+Bằng cách này, bạn có thể tạo một Pull Request ngay cả khi không có thay đổi nào trong mã nguồn.
