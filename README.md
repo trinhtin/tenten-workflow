@@ -1,5 +1,8 @@
 # tenten-workflow
 
+## Quản lý Git sử dụng SourceTree vs TortoiseGit
+Một trong những ưu điểm của SourceTree là giao diện đơn giản rất dễ sử dụng
+
 ## Quản lý mã nguồn với Git: Sử dụng 2 nhánh release và 1 nhánh chính (main)
 
 Để quản lý mã nguồn hiệu quả cho dự án của bạn với Git, việc sử dụng 2 nhánh release dành cho thành viên và 1 nhánh chính (main) là một phương pháp phổ biến. Cách thức hoạt động như sau:
