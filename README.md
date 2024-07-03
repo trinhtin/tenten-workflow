@@ -134,3 +134,80 @@ Sau khi thông báo, theo dõi quá trình review và sẵn sàng trả lời c�
 - Theo dõi quá trình review và thực hiện các thay đổi nếu cần thiết.
 
 Những bước này sẽ giúp quá trình giao tiếp và review code diễn ra suôn sẻ và hiệu quả.
+
+------------------------------------
+Nếu bạn đã chỉnh sửa nhánh `main` và cần sửa chữa một nhánh khác (`feature-branch`) để phù hợp với những thay đổi mới trên `main`, bạn có thể thực hiện các bước sau đây:
+
+### 1. Cập nhật nhánh `main` từ repository từ xa
+Đảm bảo rằng nhánh `main` của bạn đã được cập nhật với các thay đổi mới nhất từ repository từ xa.
+
+```sh
+git checkout main
+git pull origin main
+```
+
+### 2. Chuyển sang nhánh `feature-branch`
+Chuyển sang nhánh mà bạn muốn cập nhật.
+
+```sh
+git checkout feature-branch
+```
+
+### 3. Hợp nhất (merge) nhánh `main` vào `feature-branch`
+Hợp nhất nhánh `main` vào `feature-branch` để cập nhật các thay đổi mới nhất từ `main`.
+
+```sh
+git merge main
+```
+
+Trong quá trình hợp nhất, có thể xảy ra xung đột (conflicts) nếu các thay đổi trên hai nhánh không tương thích với nhau. Bạn sẽ cần phải giải quyết các xung đột này thủ công.
+
+### 4. Giải quyết xung đột (nếu có)
+Mở các file có xung đột và chỉnh sửa để giải quyết các xung đột. Sau khi giải quyết xong, đánh dấu các xung đột đã được giải quyết bằng lệnh `git add`.
+
+```sh
+git add .
+```
+
+### 5. Hoàn thành quá trình hợp nhất
+Sau khi giải quyết xong tất cả các xung đột, hoàn thành quá trình hợp nhất bằng cách commit các thay đổi.
+
+```sh
+git commit
+```
+
+### 6. Đẩy các thay đổi lên repository từ xa
+Cuối cùng, đẩy các thay đổi trên nhánh `feature-branch` lên repository từ xa.
+
+```sh
+git push origin feature-branch
+```
+
+### Tóm tắt các bước
+1. **Cập nhật nhánh `main`:**
+    ```sh
+    git checkout main
+    git pull origin main
+    ```
+2. **Chuyển sang nhánh `feature-branch`:**
+    ```sh
+    git checkout feature-branch
+    ```
+3. **Hợp nhất `main` vào `feature-branch`:**
+    ```sh
+    git merge main
+    ```
+4. **Giải quyết xung đột (nếu có):**
+    ```sh
+    git add .
+    ```
+5. **Hoàn thành quá trình hợp nhất:**
+    ```sh
+    git commit
+    ```
+6. **Đẩy các thay đổi lên repository từ xa:**
+    ```sh
+    git push origin feature-branch
+    ```
+
+Bằng cách này, nhánh `feature-branch` của bạn sẽ được cập nhật với các thay đổi mới nhất từ nhánh `main`.
