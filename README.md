@@ -208,7 +208,7 @@ git push origin feature-branch
 Bằng cách này, nhánh `feature-branch` của bạn sẽ được cập nhật với các thay đổi mới nhất từ nhánh `main`.
 
 ----------------------------------------
-## III. Để tạo một Pull Request (PR) khi không có sự thay đổi nào
+## IV. Để tạo một Pull Request (PR) khi không có sự thay đổi nào
 
 Để tạo một Pull Request (PR) khi không có sự thay đổi nào (chỉ để thông báo rằng nhánh của bạn đã được đồng bộ với nhánh `main` hoặc để kích hoạt quy trình CI/CD), bạn có thể thực hiện theo các bước sau:
 
